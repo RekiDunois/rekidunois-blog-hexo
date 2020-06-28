@@ -3256,7 +3256,7 @@ body {
 body {
   padding-right: 0 !important;
   font-family: "PingHei", "PingFang SC", Helvetica Neue, "Work Sans", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.57143;
   color: #333333;
   background-color: #fff;
@@ -5527,12 +5527,12 @@ pre .js .function {
 
 pre,
 .highlight {
-  background: #fafafa;
+  background: #31313d;
   margin: 10px 0;
   padding: 15px 10px;
   overflow: auto;
-  font-size: 13px;
-  color: #4d4d4c;
+  font-size: 1.23em;
+  color: #949494;
   line-height: 1.5;
 }
 
@@ -5559,7 +5559,7 @@ pre code {
 
 .highlight {
   position: relative;
-  padding: 32px 10px 0 10px;
+  padding: 0 10px 0 10px;
   border-radius: 4px;
 }
 
@@ -5575,6 +5575,7 @@ pre code {
   padding: 0 10px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  display: none;
 }
 
 .highlight:after {
@@ -5589,6 +5590,7 @@ pre code {
   margin-top: 11px;
   -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
   box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  display: none;
 }
 
 .highlight pre {
@@ -6410,6 +6412,10 @@ body.no-sidebar .sidebar {
   margin-bottom: 20px;
 }
 
+.article-description {
+  margin-bottom: 20px;
+}
+
 .article-footer {
   margin-top: 20px;
 }
@@ -6439,7 +6445,7 @@ body.no-sidebar .sidebar {
 }
 
 .article-list .article-title {
-  font-size: 18px;
+  font-size: 0.8em;
 }
 
 .article-toc .toc-title {
