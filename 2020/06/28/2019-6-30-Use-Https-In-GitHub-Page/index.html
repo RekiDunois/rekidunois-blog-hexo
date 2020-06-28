@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>我的 Https 之旅--GitHub Page 更换域名 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="小绿锁，yes！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的 Https 之旅--GitHub Page 更换域名">
+<meta property="og:url" content="http://yoursite.com/2020/06/28/2019-6-30-Use-Https-In-GitHub-Page/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="小绿锁，yes！">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-28T02:27:15.477Z">
+<meta property="article:modified_time" content="2020-01-25T15:55:03.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="GitHub Page">
+<meta property="article:tag" content=" https">
+<meta property="article:tag" content=" cloudflare">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2019-6-30-Use-Https-In-GitHub-Page" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/28/2019-6-30-Use-Https-In-GitHub-Page/" class="article-date">
+  <time datetime="2020-06-28T02:27:15.477Z" itemprop="datePublished">2020-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">使用方法</a>►<a class="article-category-link" href="/categories/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Web-%E7%AB%AF%E5%BC%80%E5%8F%91/">Web 端开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我的 Https 之旅--GitHub Page 更换域名
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在GitHub Page使用自己的域名</p>
+</blockquote>
+<p>fork原博客的时候我就发现可以通过指定 <code>CNAME</code> 来让 <code>username.github.io</code> 的url跳转到你指定的网址. 所以在咨询了朋友之后, 便决定将这个博客的域名换成自己的域名 <code>rekidunois.cn</code>.</p>
+<p>首先是在仓库里创建 <code>CNAME</code> 文件, 在里面设定域名 <code>blog.rekidunois.cn</code> (后来发现其实也可以直接在sitting里设置). 之后在域名的dns服务提供商里设置域名解析. 这里我使用了cloudflare作为我的dns服务提供商. 在使用它的dns服务之前, 我们需要先去域名注册机构(比如我在腾讯云购买的域名)将 <code>rekidunois.cn</code> 的dns设置为cloudflare的dns, 这样cf的域名解析服务就能使用了.</p>
+<p>添加域名解析中的CNAME记录, 将其指向 <code>rekidunois.github.io</code>, 这时候应该可以使用 <code>blog.rekidunois.cn</code> 来访问博客了. 只是我们需要在cf中做https相关设置后, 浏览器才不会将我的博客标记为不安全. 查询了一些资料之后, 我在Crypto中将SSL选项置为 <code>Fleible</code> 方式. 并且开启了 <code>Always Use HTTPS</code> 选项. 这时我发现GitHub库中的设置里还有一个选项是启用https, 我便将它勾选. 过了一段时间之后, <code>blog.rekidunois.cn</code> 就能够正常访问并且浏览器里出现那把锁了.</p>
+<p>这里可能会遇到一些坑, 比方说页面中如果有一些引用的脚本, 脚本所创建的图片可能会无法加载. 博客标签页的icon也可能会无法显示. 而通过引用脚本启用的功能(如gitalk)也会出现无法加载的情况. 而如果浏览器地址栏出现了『该网站试图从不安全的来源加载脚本』(我记不清具体的表述, 反正大概是这个意思)这样的提示的话, 请不要手动让浏览器加载这些脚本, 因为这会让浏览器将你的网站标记为不安全.</p>
+<p>总的来说这个https还算是比较简单的设置, 我甚至没有敲任何一个命令就解决了问题. 下一个目标是将部署好的ttrss完全https化. 成功之后大概也会写一篇文章来记录整个ttrss的部署历程吧.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/28/2019-6-30-Use-Https-In-GitHub-Page/" data-id="ckbyhmu3c0003asbxdlfxge0t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/06/28/2019-6-6-MarkDown-And-VS-Code/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          本地编辑 Markdown 时粘贴图片自动插入 Markdown 图片格式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/28/2019-12-9-Baseus-i-wok-Screen-Hanging-Light-Reviews/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">倍思屏幕灯简单体验</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Game/">Mobile Game</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mobile-Game/Outdoor-Activity/">Outdoor Activity</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cate1/">cate1</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cate1/cate2/">cate2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E4%BD%93%E9%AA%8C/">产品体验</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E4%BD%93%E9%AA%8C/%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91/">平板电脑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E4%BD%93%E9%AA%8C/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">使用方法</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/VS-Code/">VS Code</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Web-%E7%AB%AF%E5%BC%80%E5%8F%91/">Web 端开发</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%BE/">年度回顾</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%BE/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA/">手机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA/%E4%BA%A7%E5%93%81%E4%BD%93%E9%AA%8C/">产品体验</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A1%8C%E9%9D%A2/">桌面</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A1%8C%E9%9D%A2/%E4%BA%A7%E5%93%81%E4%BD%93%E9%AA%8C/">产品体验</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD/">英语</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD/%E7%BF%BB%E8%AF%91/">翻译</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/%E8%BF%9B%E5%BA%A6/">进度</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%81%8A/">闲聊</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%81%8A/%E6%84%9F%E6%82%9F/">感悟</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%B0%88/">闲谈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%B0%88/%E5%9B%9E%E9%A1%BE/">回顾</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%B0%88/%E8%A7%82%E5%90%8E%E6%84%9F/">观后感</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%84%9F%E6%83%B3/">感想</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/28/editing/template/">template page</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/editing/softAD/">我们什么时候开始不再相信我们所浏览的信息？</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/editing/InternetPoint/">我如何看待互联网?</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/editing/gamer/">我都在哪些游戏世界里进行过冒险呢？</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/editing/game/">我都在哪些游戏世界里进行过冒险呢？</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
