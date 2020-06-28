@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.rekidunois.cc/about/</loc>
+    
+    <lastmod>2020-06-28T05:42:09.236Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/tags/</loc>
+    
+    <lastmod>2020-06-28T03:49:26.899Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/repository/</loc>
+    
+    <lastmod>2020-06-28T03:49:26.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/categories/</loc>
+    
+    <lastmod>2020-06-28T03:49:26.897Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/links/</loc>
+    
+    <lastmod>2020-06-28T03:49:26.897Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/books/</loc>
+    
+    <lastmod>2020-06-28T03:49:26.896Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/404</loc>
+    
+    <lastmod>2020-06-28T03:49:26.895Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.rekidunois.cc/2020/06/hello-world/</loc>
     
     <lastmod>2020-06-28T02:26:12.145Z</lastmod>
