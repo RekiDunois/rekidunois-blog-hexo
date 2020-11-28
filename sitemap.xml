@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.rekidunois.cc/2020/11/One-Year-For-Work/</loc>
+    
+    <lastmod>2020-11-18T10:27:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/categories/</loc>
+    
+    <lastmod>2020-06-29T04:25:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/tags/</loc>
+    
+    <lastmod>2020-06-29T04:20:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/404</loc>
+    
+    <lastmod>2020-06-29T04:17:15.728Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rekidunois.cc/about/</loc>
+    
+    <lastmod>2020-06-29T04:17:07.263Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.rekidunois.cc/2020/01/y9000x-Reviews/</loc>
     
     <lastmod>2020-06-28T09:34:01.586Z</lastmod>
@@ -65,30 +100,9 @@
   </url>
   
   <url>
-    <loc>https://blog.rekidunois.cc/about/</loc>
-    
-    <lastmod>2020-06-28T05:42:09.236Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.rekidunois.cc/tags/</loc>
-    
-    <lastmod>2020-06-28T03:49:26.899Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.rekidunois.cc/repository/</loc>
     
     <lastmod>2020-06-28T03:49:26.898Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.rekidunois.cc/categories/</loc>
-    
-    <lastmod>2020-06-28T03:49:26.897Z</lastmod>
     
   </url>
   
@@ -103,13 +117,6 @@
     <loc>https://blog.rekidunois.cc/books/</loc>
     
     <lastmod>2020-06-28T03:49:26.896Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.rekidunois.cc/404</loc>
-    
-    <lastmod>2020-06-28T03:49:26.895Z</lastmod>
     
   </url>
   
